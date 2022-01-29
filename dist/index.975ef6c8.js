@@ -21161,7 +21161,14 @@ const App = ()=>{
             columnNumber: 9
         },
         __self: undefined
-    }, "Welcome to React Parcel Micro App!")));
+    }, "Welcome to React Parcel Micro App!"), /*#__PURE__*/ _reactDefault.default.createElement("small", {
+        __source: {
+            fileName: "src/App.js",
+            lineNumber: 7,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, "Hello This is Me!!!!")));
 };
 _c = App;
 exports.default = App;
