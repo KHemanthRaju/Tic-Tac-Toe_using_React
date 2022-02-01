@@ -21154,21 +21154,21 @@ parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const App = ()=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "src/App.js",
+            lineNumber: 5,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         __source: {
             fileName: "src/App.js",
             lineNumber: 6,
             columnNumber: 9
         },
         __self: undefined
-    }, "Welcome to React Parcel Micro App!"), /*#__PURE__*/ _reactDefault.default.createElement("small", {
-        __source: {
-            fileName: "src/App.js",
-            lineNumber: 7,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, "Hello This is Me!!!!")));
+    }, "TIC TAC TOE")));
 };
 _c = App;
 exports.default = App;
