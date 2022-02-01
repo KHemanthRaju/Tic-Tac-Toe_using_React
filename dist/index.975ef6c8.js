@@ -21153,22 +21153,31 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _board = require("./components/Board");
+var _boardDefault = parcelHelpers.interopDefault(_board);
 const App = ()=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-        __source: {
-            fileName: "src/App.js",
-            lineNumber: 5,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         __source: {
             fileName: "src/App.js",
             lineNumber: 6,
             columnNumber: 9
         },
         __self: undefined
-    }, "TIC TAC TOE")));
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "src/App.js",
+            lineNumber: 7,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, "TIC TAC TOE"), /*#__PURE__*/ _reactDefault.default.createElement(_boardDefault.default, {
+        __source: {
+            fileName: "src/App.js",
+            lineNumber: 8,
+            columnNumber: 9
+        },
+        __self: undefined
+    })));
 };
 _c = App;
 exports.default = App;
@@ -21180,7 +21189,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Board":"fiR09"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -21330,6 +21339,155 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}]},["kn9T2","7nZVA","8lqZg"], "8lqZg", "parcelRequire34f8")
+},{"react-refresh/runtime":"786KC"}],"fiR09":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1c2c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1c2c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _square = require("./Square");
+var _squareDefault = parcelHelpers.interopDefault(_square);
+const Board = ()=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 6,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 7,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 8,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 9,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 10,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 12,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 13,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 14,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 15,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 17,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 18,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 19,
+            columnNumber: 17
+        },
+        __self: undefined
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        __source: {
+            fileName: "src/components/Board.js",
+            lineNumber: 20,
+            columnNumber: 17
+        },
+        __self: undefined
+    }))));
+};
+_c = Board;
+exports.default = Board;
+var _c;
+$RefreshReg$(_c, "Board");
+
+  $parcel$ReactRefreshHelpers$1c2c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Square":"aQ9IO"}],"aQ9IO":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$aee4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$aee4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Square = ()=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement("button", {
+        type: "button",
+        __source: {
+            fileName: "src/components/Square.js",
+            lineNumber: 4,
+            columnNumber: 12
+        },
+        __self: undefined
+    }, "1"));
+};
+_c = Square;
+exports.default = Square;
+var _c;
+$RefreshReg$(_c, "Square");
+
+  $parcel$ReactRefreshHelpers$aee4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","7nZVA","8lqZg"], "8lqZg", "parcelRequire34f8")
 
 //# sourceMappingURL=index.975ef6c8.js.map
