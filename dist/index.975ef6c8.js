@@ -21368,6 +21368,7 @@ const Board = ()=>{
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 0,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 8,
@@ -21375,6 +21376,7 @@ const Board = ()=>{
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 1,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 9,
@@ -21382,6 +21384,7 @@ const Board = ()=>{
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 2,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 10,
@@ -21396,6 +21399,7 @@ const Board = ()=>{
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 3,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 13,
@@ -21403,6 +21407,7 @@ const Board = ()=>{
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 4,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 14,
@@ -21410,6 +21415,7 @@ const Board = ()=>{
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 5,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 15,
@@ -21424,6 +21430,7 @@ const Board = ()=>{
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 6,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 18,
@@ -21431,6 +21438,7 @@ const Board = ()=>{
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 7,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 19,
@@ -21438,6 +21446,7 @@ const Board = ()=>{
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+        value: 8,
         __source: {
             fileName: "src/components/Board.js",
             lineNumber: 20,
@@ -21467,7 +21476,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const Square = ()=>{
+const Square = ({ value  })=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement("button", {
         type: "button",
         __source: {
@@ -21476,7 +21485,7 @@ const Square = ()=>{
             columnNumber: 12
         },
         __self: undefined
-    }, "1"));
+    }, value));
 };
 _c = Square;
 exports.default = Square;
