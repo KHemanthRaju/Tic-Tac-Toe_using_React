@@ -21481,8 +21481,8 @@ const Square = ({ value  })=>{
         type: "button",
         __source: {
             fileName: "src/components/Square.js",
-            lineNumber: 4,
-            columnNumber: 12
+            lineNumber: 5,
+            columnNumber: 5
         },
         __self: undefined
     }, value));

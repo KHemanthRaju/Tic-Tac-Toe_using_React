@@ -1,0 +1,1 @@
+{"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA","sources":["src/components/Square.style.css"],"sourcesContent":["button{\r\n    font-size: 50px;\r\n}\r\n\r\n.btn{\r\n    color:red;\r\n}"],"names":[],"version":3,"file":"index.ccb29f90.css.map","sourceRoot":"/__parcel_source_root/"}
