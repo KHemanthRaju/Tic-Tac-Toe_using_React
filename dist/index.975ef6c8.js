@@ -21155,25 +21155,27 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _board = require("./components/Board");
 var _boardDefault = parcelHelpers.interopDefault(_board);
+var _rootScss = require("./styles/root.scss");
 const App = ()=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "app",
         __source: {
             fileName: "src/App.js",
-            lineNumber: 6,
+            lineNumber: 8,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         __source: {
             fileName: "src/App.js",
-            lineNumber: 7,
+            lineNumber: 9,
             columnNumber: 9
         },
         __self: undefined
     }, "TIC TAC TOE"), /*#__PURE__*/ _reactDefault.default.createElement(_boardDefault.default, {
         __source: {
             fileName: "src/App.js",
-            lineNumber: 8,
+            lineNumber: 10,
             columnNumber: 9
         },
         __self: undefined
@@ -21189,7 +21191,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Board":"fiR09"}],"gkKU3":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Board":"fiR09","./styles/root.scss":"dJmnI"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -21352,109 +21354,70 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _square = require("./Square");
 var _squareDefault = parcelHelpers.interopDefault(_square);
+var _s = $RefreshSig$();
 const Board = ()=>{
+    _s();
+    const [board, setBoard] = _react.useState(Array(9).fill(null));
+    const [isNext, setIsNext] = _react.useState(false);
+    const handleSquareClick = (position)=>{
+        if (board[position]) return;
+        setBoard((prev)=>{
+            return prev.map((square, pos)=>{
+                if (pos === position) return isNext ? 'X' : 'O';
+                return square;
+            });
+        });
+        setIsNext((prev)=>!prev
+        );
+    };
+    const renderSquare = (position)=>{
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
+            value: board[position],
+            onClick: ()=>handleSquareClick(position)
+            ,
+            __source: {
+                fileName: "src/components/Board.js",
+                lineNumber: 27,
+                columnNumber: 9
+            },
+            __self: undefined
+        }));
+    };
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "board",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 6,
+            lineNumber: 32,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "board-row",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 7,
+            lineNumber: 33,
             columnNumber: 13
         },
         __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 0,
+    }, renderSquare(0), renderSquare(1), renderSquare(2)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "board-row",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 8,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 1,
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 9,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 2,
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 10,
-            columnNumber: 17
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 12,
+            lineNumber: 38,
             columnNumber: 13
         },
         __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 3,
+    }, renderSquare(3), renderSquare(4), renderSquare(5)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "board-row",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 13,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 4,
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 14,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 5,
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 15,
-            columnNumber: 17
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 17,
+            lineNumber: 43,
             columnNumber: 13
         },
         __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 6,
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 18,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 7,
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 19,
-            columnNumber: 17
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
-        value: 8,
-        __source: {
-            fileName: "src/components/Board.js",
-            lineNumber: 20,
-            columnNumber: 17
-        },
-        __self: undefined
-    }))));
+    }, renderSquare(6), renderSquare(7), renderSquare(8))));
 };
+_s(Board, "do6YdmqzwAq8hcyn46YJviNMcTc=");
 _c = Board;
 exports.default = Board;
 var _c;
@@ -21476,13 +21439,15 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const Square = ({ value  })=>{
+const Square = ({ value , onClick  })=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement("button", {
         type: "button",
+        className: "square",
+        onClick: onClick,
         __source: {
             fileName: "src/components/Square.js",
             lineNumber: 5,
-            columnNumber: 5
+            columnNumber: 9
         },
         __self: undefined
     }, value));
@@ -21497,6 +21462,6 @@ $RefreshReg$(_c, "Square");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","7nZVA","8lqZg"], "8lqZg", "parcelRequire34f8")
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dJmnI":[function() {},{}]},["kn9T2","7nZVA","8lqZg"], "8lqZg", "parcelRequire34f8")
 
 //# sourceMappingURL=index.975ef6c8.js.map
