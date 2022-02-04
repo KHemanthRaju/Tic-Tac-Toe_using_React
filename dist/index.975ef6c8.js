@@ -21160,55 +21160,66 @@ var _rootScss = require("./styles/root.scss");
 var _s = $RefreshSig$();
 const App = ()=>{
     _s();
-    const [board, setBoard] = _react.useState(Array(9).fill(null));
-    const [isNext, setIsNext] = _react.useState(false);
-    const winner = _helpers.calculateWinner(board);
-    const message = winner ? `Winner is ${winner}` : `Next player is ${isNext ? 'X' : 'O'}`;
+    const [history, setHistory] = _react.useState([
+        {
+            board: Array(9).fill(null),
+            isNext: true
+        }, 
+    ]);
+    const [currentMove, setCurrentMove] = _react.useState(0);
+    const current = history[currentMove];
+    const winner = _helpers.calculateWinner(current, board);
+    const message = winner ? `Winner is ${winner}` : `Next player is ${current.isNext ? 'X' : 'O'}`;
     const handleSquareClick = (position)=>{
-        if (board[position] || winner) return;
-        setBoard((prev)=>{
-            return prev.map((square, pos)=>{
-                if (pos === position) return isNext ? 'X' : 'O';
+        if (current.board[position] || winner) return;
+        setHistory((prev)=>{
+            const last = prev[prev.length - 1];
+            const newBoard = last.board.map((square, pos)=>{
+                if (pos === position) return last.isNext ? 'X' : 'O';
                 return square;
             });
+            return prev.concat({
+                board: newBoard,
+                isNext: !last.isNext
+            });
         });
-        setIsNext((prev)=>!prev
+        setCurrentMove((prev)=>prev + 1
         );
     };
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "app",
         __source: {
             fileName: "src/App.js",
-            lineNumber: 34,
+            lineNumber: 38,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         __source: {
             fileName: "src/App.js",
-            lineNumber: 35,
+            lineNumber: 39,
             columnNumber: 9
         },
         __self: undefined
     }, "TIC TAC TOE"), /*#__PURE__*/ _reactDefault.default.createElement("h2", {
         __source: {
             fileName: "src/App.js",
-            lineNumber: 36,
+            lineNumber: 40,
             columnNumber: 9
         },
         __self: undefined
     }, message), /*#__PURE__*/ _reactDefault.default.createElement(_boardDefault.default, {
-        board: board,
+        board: current.board,
         handleSquareClick: handleSquareClick,
         __source: {
             fileName: "src/App.js",
-            lineNumber: 37,
+            lineNumber: 41,
             columnNumber: 9
         },
         __self: undefined
     })));
 };
-_s(App, "do6YdmqzwAq8hcyn46YJviNMcTc=");
+_s(App, "QD7OJwWfiLI/oc6Ky6hVi56//Jk=");
 _c = App;
 exports.default = App;
 var _c;
