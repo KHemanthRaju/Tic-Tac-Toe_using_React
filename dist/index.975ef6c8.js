@@ -21155,32 +21155,60 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _board = require("./components/Board");
 var _boardDefault = parcelHelpers.interopDefault(_board);
+var _helpers = require("./helpers");
 var _rootScss = require("./styles/root.scss");
+var _s = $RefreshSig$();
 const App = ()=>{
+    _s();
+    const [board, setBoard] = _react.useState(Array(9).fill(null));
+    const [isNext, setIsNext] = _react.useState(false);
+    const winner = _helpers.calculateWinner(board);
+    const message = winner ? `Winner is ${winner}` : `Next player is ${isNext ? 'X' : 'O'}`;
+    const handleSquareClick = (position)=>{
+        if (board[position] || winner) return;
+        setBoard((prev)=>{
+            return prev.map((square, pos)=>{
+                if (pos === position) return isNext ? 'X' : 'O';
+                return square;
+            });
+        });
+        setIsNext((prev)=>!prev
+        );
+    };
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "app",
         __source: {
             fileName: "src/App.js",
-            lineNumber: 8,
+            lineNumber: 34,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         __source: {
             fileName: "src/App.js",
-            lineNumber: 9,
+            lineNumber: 35,
             columnNumber: 9
         },
         __self: undefined
-    }, "TIC TAC TOE"), /*#__PURE__*/ _reactDefault.default.createElement(_boardDefault.default, {
+    }, "TIC TAC TOE"), /*#__PURE__*/ _reactDefault.default.createElement("h2", {
         __source: {
             fileName: "src/App.js",
-            lineNumber: 10,
+            lineNumber: 36,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, message), /*#__PURE__*/ _reactDefault.default.createElement(_boardDefault.default, {
+        board: board,
+        handleSquareClick: handleSquareClick,
+        __source: {
+            fileName: "src/App.js",
+            lineNumber: 37,
             columnNumber: 9
         },
         __self: undefined
     })));
 };
+_s(App, "do6YdmqzwAq8hcyn46YJviNMcTc=");
 _c = App;
 exports.default = App;
 var _c;
@@ -21191,7 +21219,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Board":"fiR09","./styles/root.scss":"dJmnI"}],"gkKU3":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Board":"fiR09","./styles/root.scss":"dJmnI","./helpers":"ecN5O"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -21354,22 +21382,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _square = require("./Square");
 var _squareDefault = parcelHelpers.interopDefault(_square);
-var _s = $RefreshSig$();
-const Board = ()=>{
-    _s();
-    const [board, setBoard] = _react.useState(Array(9).fill(null));
-    const [isNext, setIsNext] = _react.useState(false);
-    const handleSquareClick = (position)=>{
-        if (board[position]) return;
-        setBoard((prev)=>{
-            return prev.map((square, pos)=>{
-                if (pos === position) return isNext ? 'X' : 'O';
-                return square;
-            });
-        });
-        setIsNext((prev)=>!prev
-        );
-    };
+const Board = ({ board , handleSquareClick  })=>{
     const renderSquare = (position)=>{
         return(/*#__PURE__*/ _reactDefault.default.createElement(_squareDefault.default, {
             value: board[position],
@@ -21377,7 +21390,7 @@ const Board = ()=>{
             ,
             __source: {
                 fileName: "src/components/Board.js",
-                lineNumber: 27,
+                lineNumber: 8,
                 columnNumber: 9
             },
             __self: undefined
@@ -21387,7 +21400,7 @@ const Board = ()=>{
         className: "board",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 32,
+            lineNumber: 13,
             columnNumber: 9
         },
         __self: undefined
@@ -21395,7 +21408,7 @@ const Board = ()=>{
         className: "board-row",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 33,
+            lineNumber: 14,
             columnNumber: 13
         },
         __self: undefined
@@ -21403,7 +21416,7 @@ const Board = ()=>{
         className: "board-row",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 38,
+            lineNumber: 19,
             columnNumber: 13
         },
         __self: undefined
@@ -21411,13 +21424,12 @@ const Board = ()=>{
         className: "board-row",
         __source: {
             fileName: "src/components/Board.js",
-            lineNumber: 43,
+            lineNumber: 24,
             columnNumber: 13
         },
         __self: undefined
     }, renderSquare(6), renderSquare(7), renderSquare(8))));
 };
-_s(Board, "do6YdmqzwAq8hcyn46YJviNMcTc=");
 _c = Board;
 exports.default = Board;
 var _c;
@@ -21462,6 +21474,61 @@ $RefreshReg$(_c, "Square");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dJmnI":[function() {},{}]},["kn9T2","7nZVA","8lqZg"], "8lqZg", "parcelRequire34f8")
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dJmnI":[function() {},{}],"ecN5O":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "calculateWinner", ()=>calculateWinner
+);
+function calculateWinner(squares) {
+    const lines = [
+        [
+            0,
+            1,
+            2
+        ],
+        [
+            3,
+            4,
+            5
+        ],
+        [
+            6,
+            7,
+            8
+        ],
+        [
+            0,
+            3,
+            6
+        ],
+        [
+            1,
+            4,
+            7
+        ],
+        [
+            2,
+            5,
+            8
+        ],
+        [
+            0,
+            4,
+            8
+        ],
+        [
+            2,
+            4,
+            6
+        ], 
+    ];
+    for(let i = 0; i < lines.length; i++){
+        const [a, b, c] = lines[i];
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) return squares[a];
+    }
+    return null;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kn9T2","7nZVA","8lqZg"], "8lqZg", "parcelRequire34f8")
 
 //# sourceMappingURL=index.975ef6c8.js.map
